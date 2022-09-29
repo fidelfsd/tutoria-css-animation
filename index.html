@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            top: 100px;
+        }
+
+        #box2 {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            top: 300px;
+        }
+
+        .my-animation {
+            animation-duration: 4s;
+            animation-name: myanimation;
+        }
+
+
+        @keyframes myanimation {
+            0% {
+                background-color: red;
+                left: 0;
+                top: 0;
+            }
+
+            25% {
+                border-radius: 50%;
+                width: 20px;
+
+            }
+
+            50% {
+                background-color: yellow;
+                top: 150px;
+                height: 400px;
+            }
+
+            100% {
+                background-color: green;
+                left: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <div id="box2"></div>
+    <button onclick="anima()">Animate</button>
+
+    <script>
+
+        function anima() {
+            let box = document.getElementById('box')
+            box.classList.add("my-animation");
+
+            let box2 = document.getElementById('box2')
+            box2.classList.add("my-animation");
+        }
+
+
+
+    </script>
+</body>
+
+</html>
